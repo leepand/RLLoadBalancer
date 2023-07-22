@@ -6,10 +6,18 @@
         </div>
 
         <div class="column">
-            <button class="ui right floated labeled icon button" onclick="update_config('{{ name }}')" tabindex="0">
-                <i class="play icon"></i>
-                Apply
-            </button>
+            <div class="ui right floated buttons">
+                <button class="ui right floated labeled icon button" onclick="update_config('{{ name }}')" tabindex="0">
+                    <i class="save icon"></i>
+                    Save
+                </button>
+                <button class="ui right floated labeled icon button" onclick="test_config('{{ name }}')">
+                    <i class="check icon icon"></i>Test
+                </button>
+                <button class="ui right floated labeled icon button" onclick="apply_config('{{ name }}')">
+                    <i class="play icon icon"></i>Apply
+                </button>
+            </div>
         </div>
 
     </div>
@@ -31,3 +39,4 @@
 
     </div>
 </div>
+<p id="message"></p>

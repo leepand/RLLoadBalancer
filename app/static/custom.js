@@ -128,10 +128,70 @@ function update_config(name) {
             file: _file
         }),
         statusCode: {
-            200: function() {
-
+            200: function(resp) {
+                $('#message').text('Button clicked!');
+                console.log("dsdasd")
+                console.log('Response:', resp.msg);
+                alert(resp.msg);
                 setTimeout(function() {
                     $('#dimmer').removeClass('active');
+                    $('#message').text('Button clicked!');
+                }, 450);
+
+            }
+        }
+    });
+
+}
+
+function test_config(name) {
+    var _file = $('#file-content').val();
+    $('#dimmer').addClass('active');
+
+    $.ajax({
+        type: 'POST',
+        url: '/api/config/test/' + name,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: JSON.stringify({
+            file: _file
+        }),
+        statusCode: {
+            200: function(resp) {
+                $('#message').text('Button clicked!');
+                console.log('Response:', resp.msg);
+                alert(resp.msg);
+                setTimeout(function() {
+                    $('#dimmer').removeClass('active');
+                    $('#message').text('Button clicked!');
+                }, 450);
+
+            }
+        }
+    });
+
+}
+
+function apply_config(name) {
+    var _file = $('#file-content').val();
+    $('#dimmer').addClass('active');
+
+    $.ajax({
+        type: 'POST',
+        url: '/api/config/apply/' + name,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: JSON.stringify({
+            file: _file
+        }),
+        statusCode: {
+            200: function(resp) {
+                $('#message').text('Button clicked!');
+                console.log('Response:', resp.msg);
+                alert(resp.msg);
+                setTimeout(function() {
+                    $('#dimmer').removeClass('active');
+                    $('#message').text('Button clicked!');
                 }, 450);
 
             }
