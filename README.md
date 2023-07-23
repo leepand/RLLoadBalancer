@@ -22,3 +22,6 @@ server {
 }
 }
 ```
+- step2:
+打开main-config的nginx.conf，进行Test和Apply，模型服务生效
+<img src="resources/ops.jpg">
